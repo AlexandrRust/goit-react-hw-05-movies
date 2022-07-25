@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams, useLocation, Link, Outlet } from 'react-router-dom';
+import { useParams, useLocation, Outlet } from 'react-router-dom';
 import { apiMoviesById } from 'services/api-movies';
 import { Main } from 'components/Main/Main.styled';
 import { BackLink } from 'components/Links/BackLink.style';
