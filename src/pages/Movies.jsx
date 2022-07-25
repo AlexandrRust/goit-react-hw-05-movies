@@ -6,17 +6,9 @@ import { SearchBar } from 'components/SearchBar/SearchBar';
 import { MoviesList } from 'components/MovieList/MovieList';
 import { ToastError } from 'components/ToastError/ToastError.styled';
 
-const status = {
-  Idle: 'idle',
-  Reject: 'reject',
-  Resolved: 'resolved',
-};
-
 export const Movies = () => {
-  const { Idle, Reject, Resolved } = status;
   const [results, setResults] = useState([]);
   const [message, setMessage] = useState('');
-  const [currentStatus, setCurrentStatus] = useState(Idle);
   const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get('query') ?? '';
   const location = useLocation();
