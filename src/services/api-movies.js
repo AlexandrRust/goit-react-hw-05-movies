@@ -1,18 +1,17 @@
 import axios from 'axios';
-
-const options = {
-  API_KEY: 'f17c35877286387c8c7c530eb3e976d4',
-  TRENDING_URL: 'https://api.themoviedb.org/3/trending/movie/day',
-  SEARCH_QUERY_URL: 'https://api.themoviedb.org/3/search/movie',
-  SEARCH_ID_URL: 'https://api.themoviedb.org/3/movie',
-};
+import {
+  API_KEY,
+  TRENDING_URL,
+  SEARCH_ID_URL,
+  SEARCH_QUERY_URL,
+} from 'constans/api-options';
 
 export async function apiMoviesTranding() {
-  axios.defaults.baseURL = `${options.TRENDING_URL}`;
+  axios.defaults.baseURL = `${TRENDING_URL}`;
   try {
     return await axios.get(``, {
       params: {
-        api_key: options.API_KEY,
+        api_key: API_KEY,
       },
     });
   } catch (error) {
@@ -21,11 +20,11 @@ export async function apiMoviesTranding() {
 }
 
 export async function apiMoviesSearch(query) {
-  axios.defaults.baseURL = `${options.SEARCH_QUERY_URL}`;
+  axios.defaults.baseURL = `${SEARCH_QUERY_URL}`;
   try {
     return await axios.get(``, {
       params: {
-        api_key: options.API_KEY,
+        api_key: API_KEY,
         language: 'en-US',
         query: query,
       },
@@ -36,11 +35,11 @@ export async function apiMoviesSearch(query) {
 }
 
 export async function apiMoviesById(movieId) {
-  axios.defaults.baseURL = `${options.SEARCH_ID_URL}`;
+  axios.defaults.baseURL = `${SEARCH_ID_URL}`;
   try {
     return await axios.get(`${movieId}`, {
       params: {
-        api_key: options.API_KEY,
+        api_key: API_KEY,
         language: 'en-US',
       },
     });
@@ -50,11 +49,11 @@ export async function apiMoviesById(movieId) {
 }
 
 export async function apiMoviesCast(movieId) {
-  axios.defaults.baseURL = `${options.SEARCH_ID_URL}`;
+  axios.defaults.baseURL = `${SEARCH_ID_URL}`;
   try {
     return await axios.get(`${movieId}/credits`, {
       params: {
-        api_key: options.API_KEY,
+        api_key: API_KEY,
         language: 'en-US',
       },
     });
@@ -64,11 +63,11 @@ export async function apiMoviesCast(movieId) {
 }
 
 export async function apiMoviesReviews(movieId) {
-  axios.defaults.baseURL = `${options.SEARCH_ID_URL}`;
+  axios.defaults.baseURL = `${SEARCH_ID_URL}`;
   try {
     return await axios.get(`${movieId}/reviews`, {
       params: {
-        api_key: options.API_KEY,
+        api_key: API_KEY,
         language: 'en-US',
       },
     });

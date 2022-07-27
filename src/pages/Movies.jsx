@@ -1,4 +1,3 @@
-import { Main } from 'components/Main/Main.styled';
 import { useState, useEffect } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import { apiMoviesSearch } from 'services/api-movies';
@@ -6,7 +5,7 @@ import { SearchBar } from 'components/SearchBar/SearchBar';
 import { MoviesList } from 'components/MovieList/MovieList';
 import { ToastError } from 'components/ToastError/ToastError.styled';
 
-export const Movies = () => {
+const Movies = () => {
   const [results, setResults] = useState([]);
   const [message, setMessage] = useState('');
   const [searchParams, setSearchParams] = useSearchParams();
@@ -28,13 +27,15 @@ export const Movies = () => {
   }, [searchQuery]);
 
   return (
-    <Main>
+    <>
       <SearchBar onSubmit={getQuery} value={searchQuery} />
       {message.length > 0 ? (
         <ToastError>{message}</ToastError>
       ) : (
         <MoviesList results={results} state={{ from: location }} />
       )}
-    </Main>
+    </>
   );
 };
+
+export default Movies;

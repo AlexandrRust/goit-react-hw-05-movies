@@ -4,7 +4,7 @@ import { apiMoviesCast } from 'services/api-movies';
 import { Text } from 'components/Text/Text.styled';
 import { SecondTitle } from 'components/Title/Title.styled';
 
-export const CastList = () => {
+const CastList = () => {
   const { movieId } = useParams();
   const [casts, setCasts] = useState([]);
 
@@ -33,3 +33,5 @@ export const CastList = () => {
     </div>
   );
 };
+
+export default CastList;

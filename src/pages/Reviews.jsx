@@ -4,7 +4,7 @@ import { apiMoviesReviews } from 'services/api-movies';
 import { SecondTitle } from 'components/Title/Title.styled';
 import { Text } from 'components/Text/Text.styled';
 
-export const Reviews = () => {
+const Reviews = () => {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
 
@@ -25,3 +25,5 @@ export const Reviews = () => {
     </div>
   );
 };
+
+export default Reviews;

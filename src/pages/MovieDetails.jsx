@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, useLocation, Outlet } from 'react-router-dom';
 import { apiMoviesById } from 'services/api-movies';
-import { Main } from 'components/Main/Main.styled';
 import { BackLink } from 'components/Links/BackLink.style';
 import { Box } from 'components/Box/Box.styled';
 import { Title, SecondTitle } from 'components/Title/Title.styled';
@@ -33,7 +32,7 @@ const MovieDetails = () => {
       {message.length > 0 ? (
         <ToastError>{message}</ToastError>
       ) : (
-        <Main>
+        <>
           <BackLink to={backLinkHref}>
             <ImArrowLeft2 />
             <p>Back</p>
@@ -75,7 +74,7 @@ const MovieDetails = () => {
             </MovieDetailsList>
           </BoxInfo>
           <Outlet />
-        </Main>
+        </>
       )}
     </>
   );
