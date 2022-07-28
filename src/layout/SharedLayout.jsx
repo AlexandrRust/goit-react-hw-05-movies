@@ -1,7 +1,7 @@
 import { Header } from 'components/Header/Header.styled';
-import { Nav } from 'layout1/comons/Nav.styled';
-import { NavItem } from 'layout1/comons/NavItem.styled';
-import { Main } from './comons/Main.styled';
+import { Nav } from 'layout/common/Nav.styled';
+import { NavItem } from 'layout/common/NavItem.styled';
+import { Main } from './common/Main.styled';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { apiMoviesCast } from 'services/api-movies';
 import { Text } from 'components/Text/Text.styled';
 import { SecondTitle } from 'components/Title/Title.styled';
+import { ToastContainer } from 'react-toastify';
 
 const CastList = () => {
   const { movieId } = useParams();
@@ -30,6 +31,7 @@ const CastList = () => {
             )
         )}
       </ul>
+      <ToastContainer />
     </div>
   );
 };

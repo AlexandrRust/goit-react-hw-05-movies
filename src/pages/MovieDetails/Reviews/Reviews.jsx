@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { apiMoviesReviews } from 'services/api-movies';
 import { SecondTitle } from 'components/Title/Title.styled';
 import { Text } from 'components/Text/Text.styled';
+import { ToastContainer } from 'react-toastify';
 
 const Reviews = () => {
   const { movieId } = useParams();
@@ -22,6 +23,7 @@ const Reviews = () => {
           </li>
         ))}
       </ul>
+      <ToastContainer />
     </div>
   );
 };

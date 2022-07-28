@@ -8,6 +8,7 @@ export const BackLink = styled(Link)`
   display: flex;
   align-items: center;
   gap: 10px;
+  width: fit-content;
   color: black;
   margin-bottom: 10px;
 `;
